@@ -495,12 +495,12 @@ bool CMPT125_String::operator != (const CMPT125_String &s) const
 	int str_len = s.length(); 
 
 	if(buffer_len != str_len) 
-		return false; 
+		return true; 
 
 	for(int i = 0; i < buffer_len; i++) { 
-		if(buffer[i] != s[i]) return false; 
+		if(buffer[i] != s[i]) return true; 
 	}
-	return true;
+	return false;
 }
 bool CMPT125_String::operator != (const charPtr cStr) const //*cStr is a cstring
 {
@@ -737,12 +737,12 @@ bool operator != (const charPtr cStr, const CMPT125_String &s) //*cStr is a cstr
 	int str_len = s.cstrlen(cStr); 
 	int buffer_len = s.length();
 
-	if(str_len != buffer_len) return false; 
+	if(str_len != buffer_len) return true; 
 
 	for(int i = 0; i < str_len; i++) { 
-		if(cStr[i] != s[i]) return false; 
+		if(cStr[i] != s[i]) return true; 
 	}
-	return true; 
+	return false; 
 
 }
 bool operator < (const charPtr cStr, const CMPT125_String &s) //*cStr is a cstring
